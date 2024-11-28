@@ -44,7 +44,26 @@ Finding solid answers to the above these questions, paved way for **step 2 below
 *Ref Diagram 3: SPOKES PEERED WITH HUB*
 ![NETWORK MANAGER](https://github.com/user-attachments/assets/9601d983-b1cd-47e3-8861-f30e63b7922f)
 
-In conclusison, NSGs was configured and attached to some subnets for effective traffic control.
+ Effective Network security groups (NSG) were created and placed on appropriate subnets for more granular control of traffic flow in and out of respective subnets and appliances.
 
+To round up this project, here are some key highlight about the secured hub and spoke virtual network topology below;
 
+*Ref Diagram 3: Hub and Spoke architecture*
+![Vnet hub and spoke](https://github.com/user-attachments/assets/1f3dc0d9-d86f-4664-8b84-b2aabd784f61)
+
+**-Hub-Vnet (10.0.0.0/16):** This is the Vnet hosting the spoke networks with bi-directional peering.  Azure Bastion have its subnet for secure RDP/SSH connection to Virtual machines. For load balancing and WAF, Application Gateway was provisioned to balance load for the App-Vnet with a scale set, hosting some important App services. VPN gateway will be deployed to its own subnet to enable cross premises connection. For any “work from home staff”, point-to-site VPN can be configured. 
+
+**-Admin-Vnet (10.1.0.0/16):** The requirement for this Vnet was simple because it will host work Virtual machines. It’s a spoke to the hub with two-way connection to the hub and the Marketing/sales-Vnet. Which means the resources in this Vnet can be assessed by the Hub-Vnet, Spoke2 Vnet and vice-versa.
+For traffic inspection, Next hop Network Virtual Appliance (NVA) will be provisioned on a subnet in this Vnet, with a Route table configured (UDR) to direct traffic through the appliance before reaching the work Vms .
+
+**-Marketing/Sales-Vnet (10.4.0.0/16)**: This Vnet has two subnets which will host some Vms and a sales app. The app will assess some resources from the general services-Vnet , so this vnet is peered directy with the admin and Gen-services Vnet to communicate in both ways. 
+
+**-App-Vnet (10.2.0.0/16):** with a single subnet of 255 IPs (10.4.0.0/24), it has Virtual machine scale set hosting some critical apps. It is a spoke to the hub and only peered to communicate with the Gen-services Vnet one way to assess resources from the vnet.
+An application Gateway on the hub will distribute load to this scale sets back pool in this network.
+
+**-General services-Vnet (10.3.0.0/16):** This network will be used as service endpoints for some vital services like Azure Key vault, SQL databases, storage services which will need to be assessed securely by some other Vnet Spokes. Each service points use a separate subnet with constricted Ip range to assess these services.
+
+In addition to all the above, **Network Security Group (NSGs)** was configured to deny or allow traffic to and from some subnets, according the requirement of each departments.
+
+The **Azure monitor** will collect diagnostics, from diagnostics enabled Azure bastion, Azure firewall and App-Gateway to monitor health and performance of this resources.
 
