@@ -67,3 +67,7 @@ In addition to all the above, **Network Security Group (NSGs)** was configured t
 
 The **Azure monitor** will collect diagnostics, from diagnostics enabled Azure bastion, Azure firewall and App-Gateway to monitor health and performance of this resources.
 
+## Conclusion
+
+Implementing a Secure Hub-and-Spoke Virtual Network Architecture Design for Cloud and On-Premises Environment has equipped me with advanced skills in network security, cloud architecture, and hybrid connectivity. This project demonstrates my ability to design secure, scalable, and efficient network solutions, showcasing my expertise in Azure networking, VPN configurations, and security best practices. My hands-on experience in creating a robust network infrastructure underscores my capabilities to ensure seamless integration and protection of cloud and on-premises resources, making me a valuable addition to any cybersecurity team.
+
