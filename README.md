@@ -1,4 +1,7 @@
-# PROJECT NAME
+## Overview
+
+This project focuses on designing and implementing a secure Hub-and-Spoke Virtual Network Architecture that integrates both cloud and on-premises environments. The Hub-and-Spoke model ensures centralized control and management of network traffic, enhancing security and scalability. 
+The hub serves as a central gateway for connectivity, hosting shared resources such as firewalls and VPN gateways, while the spokes are isolated segments for individual workloads or business units. By integrating cloud and on-premises infrastructures, this architecture facilitates seamless hybrid operations, secure data flow, and robust threat protection, aligning with modern security best practices.
  
  **Implementing a Secure Hub-and-Spoke Virtual Network Architecture Design for Cloud and On-Premises Environment**.
  
