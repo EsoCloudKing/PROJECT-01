@@ -1,14 +1,16 @@
+## Project Name
+
+**Implementing a Secure Hub-and-Spoke Virtual Network Architecture Design for Cloud and On-Premises Environment**.
+
 ## Overview
 
 This project focuses on designing and implementing a secure Hub-and-Spoke Virtual Network Architecture that integrates both cloud and on-premises environments. The Hub-and-Spoke model ensures centralized control and management of network traffic, enhancing security and scalability. 
 The hub serves as a central gateway for connectivity, hosting shared resources such as firewalls and VPN gateways, while the spokes are isolated segments for individual workloads or business units. By integrating cloud and on-premises infrastructures, this architecture facilitates seamless hybrid operations, secure data flow, and robust threat protection, aligning with modern security best practices.
  
- **Implementing a Secure Hub-and-Spoke Virtual Network Architecture Design for Cloud and On-Premises Environment**.
- 
  ## Objective
-  To demonstrate and examine how a hub-and-spoke Network topology can be used to secure communications between multiple cloud (Azure) workloads and hybrid environment. The primary focus of this project was to Design a highly secure, scalable Hub and Spoke Virtual network and effect cost effective Network security using key principles like network segmentation and isolation, VPN, inter-cloud traffic encryption, firewall, NSGs, VPN-Gateways.
+To demonstrate and examine how a hub-and-spoke Network topology can be used to secure communications between multiple cloud (Azure) workloads and hybrid environment. The primary focus of this project was to Design a highly secure, scalable Hub and Spoke Virtual network and effect cost effective Network security using key principles like network segmentation and isolation, VPN, inter-cloud traffic encryption, firewall, NSGs, VPN-Gateways.
 
-  ## Skills Learned
+## Skills Learned
   - Advanced understanding of Virtual Network Security concepts and their practical application.
   - Proficiency in provisioning and securing Virtual Network using variety of cyber and cloud security concepts and principles.
   - Enhanced knowledge for provision and using Azure Network resources (Nsg, Azure firewall, Azure Bastion, VPN-Gateway, Application Gateway, and DDOS Protection).
